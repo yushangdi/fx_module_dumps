@@ -55,7 +55,7 @@ def main():
             print("Generating inputs for", model_name)
             inputs = get_inputs(input_data_path)
 
-            print("Generating inputs for", model_name)
+            print("Tracing fx graph for", model_name)
             traced_graph = make_fx(m)(inputs)
             traced_graph.graph.set_codegen(torch.fx.graph.CodeGen())  # avoid recursive pytree
 
